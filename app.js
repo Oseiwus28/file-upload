@@ -1,3 +1,5 @@
+// install the cloudinary package
+// require the cloudinary version 2 and configure 
 const cloudinary = require("cloudinary").v2
 
 cloudinary.config({ 
@@ -6,7 +8,10 @@ cloudinary.config({
     api_secret: "dHA4ECKqYt1jy5BQhFoXLLZHK9c" 
   });
 
+  // create a variablle to hold the file(s) to be uploaded
   const uploadImage = "./pic.jpg"
+
+  // create the asynchronous Function to upload file
   const uploadFile = async()=>{
     try{
     const res = await cloudinary.uploader.upload(uploadImage)
@@ -16,4 +21,5 @@ cloudinary.config({
 }
   }
   
+// call the function
   uploadFile()
